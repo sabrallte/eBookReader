@@ -10,11 +10,15 @@
 	//Dateipfad festlegen
 	
 	$path = "ebook/".$_GET["AutorIndex"];
-	//echo $path;
+
 	
 	//Array erzeugen mit Daten;
 	$results = scandir($path);
+	
+	//Sortieren a-z
 	sort($results);
+	
+	//Jeder Autor einzigartig
 	array_unique($results);
 	
 	
@@ -28,7 +32,12 @@
 		if (($file_type == "txt") 
 		&& ($autorname = explode("-", $result))!=FALSE
 		&& ($result != '.' or $result != '..')) {
-	       	echo "<a href='makelistAB.php?AutorIndex=".$_GET["AutorIndex"]."&Autorname=$autorname[0]'>$autorname[0]</a>  ";
+			
+			//zählen der vorhandenen Bücher pro Autor
+			$num_books = count(glob("$path/$autorname[0]-*.txt"));
+	
+			//Link erzeugen zu Büchern des Autors, übergabe der Parameter als GET, ausgabe Anzahl der Bücher Pro Autor
+	       	echo "<a href='makelistAB.php?AutorIndex=".$_GET["AutorIndex"]."&Autorname=$autorname[0]'>$autorname[0] ($num_books)</a>";
 		    
 	        //delimiter
 	        echo '<br>'; 

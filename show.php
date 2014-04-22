@@ -30,7 +30,7 @@
 	echo "<br>";
 	
 	//Text von Buch aus Datei lesen und auf Bildschirm darstellen
-	echo file_get_contents( "ebook\\".$_GET["AutorIndex"]."\\".$_GET["Filename"].".txt" ); // get the contents, and echo it out.
+	echo file_get_contents( "ebook\\".$_GET["AutorIndex"]."\\".$_GET["Filename"].".txt" );
 
 ?>
 
