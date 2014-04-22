@@ -19,17 +19,19 @@
 	
 	
 	//alle Pfade/files Durchlaufe
-	for ($i=0;$i<count($results);$i++) {
+	foreach ( $results as $result)  {
+		
+		//Fileextension der aktuellen Datei herrausfinden
+		$file_type = strtolower( end( explode('.', $result ) ) );
 
-		$result= $results[$i];
-	    $info = pathinfo($result);
-
-	    if ($result === '.' or $result === '..') continue;
-		if (($info["extension"] == "txt") && ($autorname = explode("-", $result))!=FALSE) {
+		//Prüfen ob Extension der aktuellen Datei TXT ist und der Autorname gelesen werden kann
+		if (($file_type == "txt") 
+		&& ($autorname = explode("-", $result))!=FALSE
+		&& ($result != '.' or $result != '..')) {
 	       	echo "<a href='makelistAB.php?AutorIndex=".$_GET["AutorIndex"]."&Autorname=$autorname[0]'>$autorname[0]</a>  ";
 		    
 	        //delimiter
-	        if($i!=count($results)-1) echo '<br>'; 
+	        echo '<br>'; 
 	    }
 	}
 ?>
