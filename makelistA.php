@@ -37,10 +37,10 @@
 			$num_books = count(glob("$path/$autorname[0]-*.txt"));
 	
 			//Link erzeugen zu Büchern des Autors, übergabe der Parameter als GET, ausgabe Anzahl der Bücher Pro Autor
-	       	echo "<a href='makelistAB.php?AutorIndex=".$_GET["AutorIndex"]."&Autorname=$autorname[0]'>$autorname[0] ($num_books)</a>";
+	       	print "<a href='makelistAB.php?AutorIndex=".$_GET["AutorIndex"]."&Autorname=$autorname[0]'>$autorname[0] ($num_books)</a>";
 		    
 	        //delimiter
-	        echo '<br>'; 
+	        print '<br>'; 
 	    }
 	}
 ?>

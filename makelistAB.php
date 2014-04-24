@@ -7,16 +7,14 @@
 
 
 <?php
-	echo '<h1>Autor Name: '.$_GET["Autorname"].'</h1>';
+	print '<h1>Autor Name: '.$_GET["Autorname"].'</h1>';
 	$path = "ebook/".$_GET["AutorIndex"]."/";
-	//echo $path;
-	echo "<table border=1>";
+	//print $path;
+	print "<table border=1>";
 	
-	//Array erzeugen mit Daten;
+	//Array erzeugen mit Daten und sortieren;
 	$results = scandir($path);
 	sort($results);
-	//$file_picture = array('jpg', 'jpeg', 'png', 'gif');
-	
 
 	//alle Pfade/files Durchlaufen
 	foreach ( $results as $file ) {
@@ -38,32 +36,32 @@
 		&& ($file != '.' or $file != '..')) {
 			
 			//Tabellenspalte anlegen
-			echo "<tr>";
-			echo '<td align="center" valign="middle">';
+			print "<tr>";
+			print '<td align="center" valign="middle">';
 
 			//Link erzeugen zu Show.php mit GET anweiﬂungen (Index,Autor,Titel,Dateiname)
-			echo "<a href='show.php?AutorIndex=". $_GET["AutorIndex"]. "&Autor=$autortitle[0]&Booktitle=$autortitle[1]&Filename=$filename[0]'>";
+			print "<a href='show.php?AutorIndex=". $_GET["AutorIndex"]. "&Autor=$autortitle[0]&Booktitle=$autortitle[1]&Filename=$filename[0]'>";
 			
 			//pr¸fen ob Bilder zum dem Buch existieren, Falls ja-> Darstellen sonst Platzhalter Grafik
 			if (($images = glob("$path$filename[0].{jpg,jpeg,gif,png}", GLOB_BRACE))!=FALSE)
-				echo '<img src="'.$images[0].'" alt="'.$filename[0].'" width="150" hight="auto" >';
+				print '<img src="'.$images[0].'" alt="'.$filename[0].'" width="150" hight="auto" >';
 			else 				
-				echo '<img src="cfg/placeholder.jpg" alt="'.$filename[0].'" width="150" hight="auto">';
+				print '<img src="cfg/placeholder.jpg" alt="'.$filename[0].'" width="150" hight="auto">';
 			
 			//Tablenspalte schlieﬂen
-			echo "</td>";
+			print "</td>";
 			
 			//Buchtitel	neue Tabellenspalte
-			echo "<td>";
-			echo "$autortitle[1]</a>";
+			print "<td>";
+			print "$autortitle[1]</a>";
 			
 			//Tablenzeile schlieﬂen
-			echo "</td>";
-			echo "</tr>";
+			print "</td>";
+			print "</tr>";
 			
 	    }
 	}
-	echo "</table>";
+	print "</table>";
 ?>
 	
 <p><a href = "javascript:history.back()">Back</a> 
