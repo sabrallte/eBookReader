@@ -1,0 +1,44 @@
+
+
+
+*********************************************************************************************
+1.) Eclipse Plugin PHP:
+
+Eclipse öffnen
+-> Help -> install new Software -> Add -> Name: irgendeinname vergeben
+Location:  http://phpeclipse.sourceforge.net/update/stable/1.2.x/
+-> OK 
+-> Work with -> angelegtes Item auswählen
+-> select all
+
+Wizard folgen
+*********************************************************************************************
+2.) XAMPP
+
+XAMPP Downloaden
+ http://www.chip.de/downloads/XAMPP_22023279.html
+
+Installieren
+*********************************************************************************************
+3.) Eclipse PHP Projekt anlegen
+
+New-> other -> PHP Project -> Use default location häkchen raus -> Browse 
+-> Pfad auswählen: C/xampp/htdocs -> neuen Ordner erstellen, name hello_word (oder ein anderer:))
+
+//das Projekt muss unbedingt in dem Ordner angelegt werden
+
+php Dateien anlegen
+
+alle sonstigen dateien die in diesem Ordner liegen, kopieren und in C/xampp/htdocs/hello_world einfügen
+
+*********************************************************************************************
+4.) im Browser anzeigen
+
+Xampp öffnen -> Apache starten
+Firefox öffnen -> https://localhost/hello_world
+*********************************************************************************************
+
+
+
+
+
