@@ -1,2 +1,3 @@
 - wenn man auf den Autor klickt, werden nicht nur die Werke von dem angeklickten Autor angezeigt,
 sondern alle mit dem Anfangsbuchstaben
+- bei index php funktioniert das skalieren der bilder teilweise nicht
