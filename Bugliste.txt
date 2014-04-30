@@ -1,0 +1,2 @@
+- wenn man auf den Autor klickt, werden nicht nur die Werke von dem angeklickten Autor angezeigt,
+sondern alle mit dem Anfangsbuchstaben
