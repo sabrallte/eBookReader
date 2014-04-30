@@ -1,0 +1,20 @@
+p.info {
+   font-family: arial, sans-serif;
+  line-height: 150%;
+  margin-left: 2em;
+
+  display: inline-block;
+
+}
+
+a:link { font-weight:bold; color:blue; text-decoration:none; }
+a:visited { font-weight:bold; color:silver; text-decoration:none; }
+a:focus { font-weight:bold; color:red; text-decoration:underline; }
+a:hover { font-weight:bold; color:green; text-decoration:none; }
+a:active { font-weight:bold; color:lime; text-decoration:underline; }
+
+
+
+
+
+
