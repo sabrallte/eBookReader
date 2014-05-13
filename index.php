@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<link rel="stylesheet" href="test.css" type="text/css" media="screen">
+<link rel="stylesheet" href="cfg/stylesheet.css" type="text/css" media="screen">
 <html>
 <body bgcolor="#CED8F6">
 
@@ -36,7 +36,7 @@
 			
 			// Link erzeugen zu autorenübersicht (makelista.php) in klammern dahinter anzahl der Bücher im Ordner anzeigen
 			print '<p class="info">'; 
-			print "<a href='makelistA.php?AutorIndex=$result'>$result ($num_files)";
+			print "<a href='makelistA.php?AutorIndex=$result'>$result ($num_files)</a>";
 	
 	
 		}
@@ -52,11 +52,13 @@
 		$history = array_map('trim', $history);
 		
 		//als Table ausgeben
-		print '<p><table>
-			<tr>';
+		print '<h3>Zuletzt geöffnete Bücher:</h3>';
+		print '<p><table><tr>';
+
 			
 			$zähler=0;
 		//Array History durchlaufen, jedes einzelne Element in historyresult (string) 
+		
 		foreach ($history as $historyresult) {
 			$zähler=$zähler+1;
 			
@@ -65,28 +67,31 @@
 			$autorbook = explode ("-",$pathtofile[2]);
 			
 			//tabellenspalte anlegen
-			print '<td>';
+			print '<td class="HISTORY">';
 			
 			//Link erzeugen zu Buch
+			//Achtung, der LINK muss das BILD und den Buch/Autor umschließen damit es
+			//einwandfrei zum Buch verlingt!!!
 			print "<a href='show.php?AutorIndex=". $pathtofile[1]. 
 				"&Autor=$autorbook[0]&Booktitle=$autorbook[1]&Filename=$pathtofile[2]'>";
 			
 			//bilder suchen
 
 			if (($images = glob("$historyresult.{jpg,jpeg,gif,png}", GLOB_BRACE))!=FALSE)
-				print '<img src="'.$images[0].'" alt="'.$autorbook[1].'" width="150" hight="auto" >';
+				print '<img src="'.$images[0].'" alt="'.$autorbook[1].'" class="MAXSIZE" >';
 			else 				
-				print '<img src="placeholder.jpg" alt="'.$autorbook[1].'" width="150" hight="auto">';
+				print '<img src="cfg/placeholder.jpg" alt="'.$autorbook[1].'" class="MAXSIZE" >';
 			
-				print('<p>');
-				print '<td>'; echo ($autorbook[1]);print('</p>');print '</td>';
+			print "<br/> $autorbook[1]";
 				
-				if ($zähler==4){print '<tr>';$zähler=0;}
-		}
+			if ($zähler==5){print '</tr><tr>';$zähler=0;}
+		
 	
 		
 		//Link und Tabellenspalte schließen
-		print 	'</a></table></p></td></tr>';
+		print 	'</a>';
+		}
+		print '</tr></table></p>';
 			
 	}
 		

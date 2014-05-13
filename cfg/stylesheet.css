@@ -13,6 +13,22 @@ a:focus { font-weight:bold; color:red; text-decoration:underline; }
 a:hover { font-weight:bold; color:green; text-decoration:none; }
 a:active { font-weight:bold; color:lime; text-decoration:underline; }
 
+img.MAXSIZE {
+
+	max-height:200px;
+	max-width:150px; 
+	width:auto; 
+	hight:auto; 
+}
+
+td.HISTORY {
+
+	vertical-align:top; 
+	text-align:center;
+	width:150px;
+	height:275px;
+}
+
 
 
 

@@ -30,7 +30,7 @@
 <?php
 
 	//abrufen der letzten scrollposition falls das buch schonmal gelesen wurde
-	if (($ypos= file_get_contents("cfg/bookmark/".$filename))==FALSE)
+	if (($ypos= @file_get_contents("cfg/bookmark/".$filename))==FALSE)
 		$ypos = 0;
 
 	

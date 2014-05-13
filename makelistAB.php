@@ -25,15 +25,16 @@
 		//Autor und Buchtitel aus dem Dateinamen extrahieren
 		$filename = explode (".", $file);
 		$autortitle = explode("-", $filename[0]);
+		
 
-
-
-	    //Prüfen ob Extension der aktuellen Datei TXT ist und Autoren übereinstimmen
+	    //Prüfen ob Extension der aktuellen Datei TXT 
 		if (($file_type== "txt") 
-		&& strcmp($autortitle[0],$_GET["Autorname"])
+		
+		//prüfen das Autoren übereinstimmen + entferen von ungewohlten Leerzeichen
+		and (trim($autortitle[0])==$_GET["Autorname"])
 		
 		//prüfen das es nicht um Verzeichnissinformationen handelt
-		&& ($file != '.' or $file != '..')) {
+		and ($file != '.' or $file != '..')) {
 			
 			//Tabellenspalte anlegen
 			print "<tr>";

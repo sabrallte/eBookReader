@@ -1,8 +1,0 @@
-- wenn man auf den Autor klickt, werden nicht nur die Werke von dem angeklickten Autor angezeigt,
-sondern alle mit dem Anfangsbuchstaben
-- bei index php funktioniert das skalieren der bilder teilweise nicht
-- wenn ich einen buchstaben auswähle: 
-fehler in makelistA.php in Zeile 29
-		//Fileextension der aktuellen Datei herrausfinden
-		$file_type = strtolower( end( explode('.', $result ) ) );
-wirft bei mir " Strict standards: Only variables should be passed by reference"
