@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<link rel="stylesheet" href="cfg/stylesheet.css" type="text/css" media="screen">
 <html>
-<body bgcolor="#CED8F6">
+	<head><meta http-equiv="content-type" content="text/html; charset=utf-8"/></head>
+<body>
 
 <h1>Autor Name</h1>
-
 
 
 <?php
@@ -15,30 +14,34 @@
 	
 	//Array erzeugen mit Daten;
 	$results = scandir($path);
-	
+		
 	//Sortieren a-z
 	sort($results);
+
+	//Autoren Filtern
+	for ($i=0;$i<count($results);$i++) {
+	  $data = explode("-",$results[$i]);
+	  $results[$i] = $data[0];
+	}
 	
 	//Jeder Autor einzigartig
-	array_unique($results);
-	
+	$results = array_unique($results);
+
 	
 	//alle Pfade/files Durchlaufe
 	foreach ( $results as $result)  {
 		
 		//Fileextension der aktuellen Datei herrausfinden
 		$file_type = strtolower( end( explode('.', $result ) ) );
-
-		//Prüfen ob Extension der aktuellen Datei TXT ist und der Autorname gelesen werden kann
-		if (($file_type == "txt") 
-		&& ($autorname = explode("-", $result))!=FALSE
-		&& ($result != '.' or $result != '..')) {
+				
+		//Prï¿½fen ob Extension der aktuellen Datei TXT ist und der Autorname gelesen werden kann
+		if ($result != '.' and $result != '..') {
 			
-			//zählen der vorhandenen Bücher pro Autor
-			$num_books = count(glob("$path/$autorname[0]-*.txt"));
+			//zï¿½hlen der vorhandenen Bï¿½cher pro Autor
+			$num_books = count(glob("$path/$result-*.txt"));
 	
-			//Link erzeugen zu Büchern des Autors, übergabe der Parameter als GET, ausgabe Anzahl der Bücher Pro Autor
-	       	print "<a href='makelistAB.php?AutorIndex=".$_GET["AutorIndex"]."&Autorname=$autorname[0]'>$autorname[0] ($num_books)</a>";
+			//Link erzeugen zu Bï¿½chern des Autors, ï¿½bergabe der Parameter als GET, ausgabe Anzahl der Bï¿½cher Pro Autor
+	       	print "<a href='makelistAB.php?AutorIndex=".$_GET["AutorIndex"]."&Autorname=$result'>$result ($num_books)</a>";
 		    
 	        //delimiter
 	        print '<br>'; 

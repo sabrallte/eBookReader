@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<link rel="stylesheet" href="cfg/stylesheet.css" type="text/css" media="screen">
 <html>
-<body bgcolor="#CED8F6">
+	<head><meta http-equiv="content-type" content="text/html; charset=utf-8"/></head>
+<body>
 
 
 
@@ -28,36 +28,36 @@
 		$autortitle = explode("-", $filename[0]);
 		
 
-	    //Prüfen ob Extension der aktuellen Datei TXT 
+	    //Prï¿½fen ob Extension der aktuellen Datei TXT 
 		if (($file_type== "txt") 
 		
-		//prüfen das Autoren übereinstimmen + entferen von ungewohlten Leerzeichen
+		//prï¿½fen das Autoren ï¿½bereinstimmen + entferen von ungewohlten Leerzeichen
 		and (trim($autortitle[0])==$_GET["Autorname"])
 		
-		//prüfen das es nicht um Verzeichnissinformationen handelt
+		//prï¿½fen das es nicht um Verzeichnissinformationen handelt
 		and ($file != '.' or $file != '..')) {
 			
 			//Tabellenspalte anlegen
 			print "<tr>";
 			print '<td align="center" valign="middle">';
 
-			//Link erzeugen zu Show.php mit GET anweißungen (Index,Autor,Titel,Dateiname)
+			//Link erzeugen zu Show.php mit GET anweiï¿½ungen (Index,Autor,Titel,Dateiname)
 			print "<a href='show.php?AutorIndex=". $_GET["AutorIndex"]. "&Autor=$autortitle[0]&Booktitle=$autortitle[1]&Filename=$filename[0]'>";
 			
-			//prüfen ob Bilder zum dem Buch existieren, Falls ja-> Darstellen sonst Platzhalter Grafik
+			//prï¿½fen ob Bilder zum dem Buch existieren, Falls ja-> Darstellen sonst Platzhalter Grafik
 			if (($images = glob("$path$filename[0].{jpg,jpeg,gif,png}", GLOB_BRACE))!=FALSE)
 				print '<img src="'.$images[0].'" alt="'.$filename[0].'" width="150" hight="auto" >';
 			else 				
 				print '<img src="cfg/placeholder.jpg" alt="'.$filename[0].'" width="150" hight="auto">';
 			
-			//Tablenspalte schließen
+			//Tablenspalte schlieï¿½en
 			print "</td>";
 			
 			//Buchtitel	neue Tabellenspalte
 			print "<td>";
 			print "$autortitle[1]</a>";
 			
-			//Tablenzeile schließen
+			//Tablenzeile schlieï¿½en
 			print "</td>";
 			print "</tr>";
 			
