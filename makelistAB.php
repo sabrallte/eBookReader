@@ -1,6 +1,7 @@
 <!DOCTYPE html>
+<link rel="stylesheet" href="cfg/stylesheet.css" type="text/css" media="screen">
 <html>
-<body>
+<body bgcolor="#CED8F6">
 
 
 
