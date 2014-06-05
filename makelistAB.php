@@ -1,8 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
-	<head><meta http-equiv="content-type" content="text/html; charset=utf-8"/></head>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+		<link rel="stylesheet" href="cfg/stylesheet.css" type="text/css" media="screen">
+	</head>
 <body>
-
+<body bgcolor="#CED8F6">
 
 
 

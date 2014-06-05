@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 	
 <head>
@@ -37,7 +37,7 @@
 
 	
 	//Body �ffnen mit Attribute onscroll -> ypos (Scroll) position jedesmal speichern in cookie
-	print '<body onunload="savepos()" onLoad="window.scrollTo(0,'.$ypos.')">';
+	print '<body onunload="savepos()" onLoad="window.scrollTo(0,'.$ypos.')" bgcolor="#CED8F6">';
 	
 	print '<p><a href = "javascript:history.back()">Back</a>
 	<a href="index.php">Home</a></p>';
