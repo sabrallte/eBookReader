@@ -35,7 +35,7 @@
 			// Dateien im atuellen Verzeichnis z�hlen (wieviel B�chern enthalten)
 			$num_files = count ( glob ( "$path$result/*.txt" ) );
 
-			// Link erzeugen zu autoren�bersicht (makelista.php) in klammern dahinter anzahl der B�cher im Ordner anzeigen
+			// Link erzeugen zu autorenuebersicht (makelista.php) in klammern dahinter anzahl der Buecher im Ordner anzeigen
 			print '<p class="info">'; 
 			print "<a href='makelistA.php?AutorIndex=$result'>$result ($num_files)</a>";
 	
@@ -49,19 +49,19 @@
 	//darstellen der History, daten aus History file laden
 	if (($history = file($filehistory))!=FALSE) {
 		
-		//leerzeichen und Zeilenumbr�che (verursacht durch den import aus TXT) entfernen
+		//leerzeichen und Zeilenumbrueche (verursacht durch den import aus TXT) entfernen
 		$history = array_map('trim', $history);
 		
 		//als Table ausgeben
-		print '<h3>Zuletzt ge�ffnete B�cher:</h3>';
+		print '<h3>Zuletzt ge&ouml;ffnete B&uuml;cher:</h3>';
 		print '<p><table><tr>';
 
 			
-			$z�hler=0;
+			$zaehler=0;
 		//Array History durchlaufen, jedes einzelne Element in historyresult (string) 
 		
 		foreach ($history as $historyresult) {
-			$z�hler=$z�hler+1;
+			$zaehler=$zaehler+1;
 			
 			//String wieder aufdriesenln nach autor,titel, index und dateiname... ->uneffektiv
 			$pathtofile = explode("/",$historyresult);
@@ -71,7 +71,7 @@
 			print '<td class="HISTORY">';
 			
 			//Link erzeugen zu Buch
-			//Achtung, der LINK muss das BILD und den Buch/Autor umschlie�en damit es
+			//Achtung, der LINK muss das BILD und den Buch/Autor umschliessen damit es
 			//einwandfrei zum Buch verlingt!!!
 			print "<a href='show.php?AutorIndex=". $pathtofile[1]. 
 				"&Autor=$autorbook[0]&Booktitle=$autorbook[1]&Filename=$pathtofile[2]'>";
@@ -89,7 +89,7 @@
 		
 	
 		
-		//Link und Tabellenspalte schlie�en
+		//Link und Tabellenspalte schliessen
 		print 	'</a>';
 		}
 		print '</tr></table></p>';
