@@ -44,23 +44,22 @@
 	?>
 	
 	<style>
-	div.floating-menu {position:fixed;left:650px;background:#fff4c8;border:1px solid #ffcc00;width:150px;z-index:100;}
-	div.floating-menu a, div.floating-menu h3 {display:block;margin:0 0.5em;}
+	div.floating-menu {position:fixed;left:5px;background:#fff4c8;width:150;z-index:100;}
+	div.floating-menu a, div.floating-menu h3 {margin:0 0.5em;}
 	</style>
 	<div float:right class="floating-menu">
-	<h3>Men&uuml</h3>
+	<b>Men&uuml:	</b>
+	<a href="index.php">Hauptmen&uuml;</a>	
 	<a href="javascript:history.back()">Zur&uuml;ck</a>
-	<a href="index.php">Hauptmen&uuml;</a>
+	
 
 	</div>
 	
 	<?php
 	
-	print '<p><a href = "javascript:history.back()">Back</a>
-	<a href="index.php">Home</a></p>';
 		
 	//Ueberschrift, Autorname und Buchtitel ausgeben
-	print "<h1><bold>Booktitle:</bold> ".$_GET["Booktitle"]."</h1>";
+	print "<br><br><h1><bold>Booktitle:</bold> ".$_GET["Booktitle"]."</h1>";
 	print "<h2>Autor: ".$_GET["Autor"]."</h2>";
 	
 	//pruefen ob es ein Bild zu dem Buch gibt, falls ja darstellen sonst nichts
@@ -86,7 +85,7 @@
 			//aktuelles buch schon in Array vorhanden (wurde schon gelesen)?
 			if (($pos=array_search($path.$filename, $history))!==FALSE)  {
 					
-				//eintrag aus Array l�schen
+				//eintrag aus Array loeschen
 				unset($history[$pos]);
 			}
 		
@@ -103,7 +102,7 @@
 			}
 		}
 		
-		//an letzter stelle neu einf�gen
+		//an letzter stelle neu einfuegen
 		array_push($history, $path.$filename);
 		
 		//History speichern in datei

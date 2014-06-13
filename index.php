@@ -32,12 +32,18 @@
 			// nur Verzeichnisse darstellen als Link
 		if (is_dir ( $path . $result )) {
 			
-			// Dateien im atuellen Verzeichnis z�hlen (wieviel B�chern enthalten)
-			$num_files = count ( glob ( "$path$result/*.txt" ) );
+			// Dateien im atuellen Verzeichnis zaehlen (wieviel Buechern enthalten)
+			if (glob ( "$path$result/*.txt" ) === false)
+				$num_files = 0;
+			else
+				$num_files = count ( glob ( "$path$result/*.txt" ) );
+
 
 			// Link erzeugen zu autorenuebersicht (makelista.php) in klammern dahinter anzahl der Buecher im Ordner anzeigen
 			print '<p class="info">'; 
-			print "<a href='makelistA.php?AutorIndex=$result'>$result ($num_files)</a>";
+			
+			if ($num_files ==! 0) 
+				print "<a href='makelistA.php?AutorIndex=$result'>$result ($num_files)</a>";				
 	
 	
 		}
@@ -85,7 +91,7 @@
 			
 			print "<br/> $autorbook[1]";
 				
-			if ($z�hler==5){print '</tr><tr>';$z�hler=0;}
+			if ($zaehler==5){print '</tr><tr>';$zaehler=0;}
 		
 	
 		
