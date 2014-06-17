@@ -45,7 +45,7 @@
 			print '<td align="center" valign="middle">';
 
 			//Link erzeugen zu Show.php mit GET anwei�ungen (Index,Autor,Titel,Dateiname)
-			print "<a href='show.php?AutorIndex=". $_GET["AutorIndex"]. "&Autor=$autortitle[0]&Booktitle=$autortitle[1]&Filename=$filename[0]'>";
+			print "<a href='show.php?AutorIndex=". $_GET["AutorIndex"]. "&Autor=$autortitle[0]&Booktitle=$autortitle[1]&Filename=$filename[0]' title='$autortitle[1]'>";
 			
 			//pr�fen ob Bilder zum dem Buch existieren, Falls ja-> Darstellen sonst Platzhalter Grafik
 			if (($images = glob("$path$filename[0].{jpg,jpeg,gif,png}", GLOB_BRACE))!=FALSE)

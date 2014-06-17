@@ -80,7 +80,7 @@
 			//Achtung, der LINK muss das BILD und den Buch/Autor umschliessen damit es
 			//einwandfrei zum Buch verlingt!!!
 			print "<a href='show.php?AutorIndex=". $pathtofile[1]. 
-				"&Autor=$autorbook[0]&Booktitle=$autorbook[1]&Filename=$pathtofile[2]'>";
+				"&Autor=$autorbook[0]&Booktitle=$autorbook[1]&Filename=$pathtofile[2]'  title='$autorbook[1]'>";
 			
 			//bilder suchen
 
